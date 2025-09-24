@@ -78,7 +78,7 @@ Returns matrix of edge lengths with shape `(nF, 3)`, the last dimension holds en
 - faces (torch.Tensor): (nF, 3) Integer tensor of triangle indices
 
 ## Troubleshooting:
-Error:
+Runtime error:
 ```
 ImportError: libc10.so: cannot open shared object file: No such file or directory
 ```
@@ -86,6 +86,22 @@ Solution: Update `LD_LIBRARY_PATH` to tell dynamic linker where to find libc10.s
 ```bash
 export LD_LIBRARY_PATH=$(python -c "import os,torch; print(os.path.join(os.path.dirname(torch.__file__), 'lib'))"):$LD_LIBRARY_PATH
 ```
+
+<br/>
+
+Installation error:
+```
+The detected CUDA version ... mismatches the version that was used to compile PyTorch ... Please make sure to use the same CUDA versions
+```
+Solution: Your `nvcc` version does not match the CUDA runtime version used by PyTorch. For example, if you installed CUDA Toolkit 12.8, then you need PyTorch+cu128 to install our package. You can use `which nvcc && nvcc --version` and compare the output to `import torch; torch.version.cuda`.
+
+<br/>
+
+Installation error on Windows:
+```
+error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools"
+```
+Solution: Download [Microsoft C++ Build Tools](https://visualstudio.microsoft.com/visual-cpp-build-tools/). In the installer select "Desktop development with C++" and click install. For more help see [here](https://stackoverflow.com/questions/64261546/how-to-solve-error-microsoft-visual-c-14-0-or-greater-is-required-when-inst).
 
 ## Citation
 This package was developed during our work on [PoissonNet](https://github.com/poissonnet). If you found this package helpful, please considering citing as:
