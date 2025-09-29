@@ -1,4 +1,8 @@
 # Torch Mesh Operators (TMO): A PyTorch CUDA extension for discrete differential operators on triangle meshes.
+
+<!-- ![](./assets/torch_mesh_ops_logo.png) -->
+<img src="./assets/torch_mesh_ops_logo.png" width="350" align="right" style="margin-left:20px"/>
+
 This repository offers a PyTorch CUDA extension for constructing discrete differential operators on triangle meshes *directly* on the GPU, significantly speeding up their construction compared to CPU implementations.
 
 These kernels were developed to accelerate our work in [PoissonNet: A Local-Global Approach for Learning on Surfaces](https://github.com/ArmanMaesumi/poissonnet). They are especially useful when mesh operators are needed, e.g., inside of a training loop. Fast GPU-based operator construction eliminates the need to cache operators before training. 
