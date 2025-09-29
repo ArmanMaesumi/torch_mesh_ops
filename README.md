@@ -1,7 +1,7 @@
 # Torch Mesh Operators (TMO): A PyTorch CUDA extension for discrete differential operators on triangle meshes.
 
 <!-- ![](./assets/torch_mesh_ops_logo.png) -->
-<img src="./assets/torch_mesh_ops_logo.png" width="350" align="right" style="margin-left:20px"/>
+<img src="./assets/torch_mesh_ops_logo.png" width="450" align="left" style="margin-right:20px"/>
 
 This repository offers a PyTorch CUDA extension for constructing discrete differential operators on triangle meshes *directly* on the GPU, significantly speeding up their construction compared to CPU implementations.
 
