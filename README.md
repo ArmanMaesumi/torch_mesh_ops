@@ -48,7 +48,7 @@ Returns a sparse matrix of shape (nV, nV) representing the Laplacian matrix (no 
 
 #### Intrinsic Gradient
 ```python
-L = TMO.intrinsic_gradient(edge_lens, faces)
+grad = TMO.intrinsic_gradient(edge_lens, faces)
 ```
 Returns a sparse matrix of shape (2*nF, nV) representing the intrinsic gradient operator defined by edge lengths. This operator maps vertex-based scalar fields to their face-based tangent gradients. The elements of the first dimension ***interleave*** the x and y components of the gradient. For convenience, we also provide `TMO.intrinsic_gradient_stacked` If you prefer the x and y components to be *stacked*.
 
@@ -67,7 +67,7 @@ Returns a vector of lumped vertex masses with shape `(nV,)` as accumulation of o
 
 #### Face Areas
 ```python
-mass = TMO.face_areas(verts, faces)
+areas = TMO.face_areas(verts, faces)
 ```
 Returns vector of face areas with shape `(nF,)`.
 
@@ -76,7 +76,7 @@ Returns vector of face areas with shape `(nF,)`.
 
 #### Edge Lengths
 ```python
-mass = TMO.edge_lengths(verts, faces)
+lengths = TMO.edge_lengths(verts, faces)
 ```
 Returns matrix of edge lengths with shape `(nF, 3)`, the last dimension holds entries for edges `[1,2], [2,0], [0, 1]` on each face (i.e. edges opposite to vertices i,j,k).
 
